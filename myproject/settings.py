@@ -80,7 +80,7 @@ import os
 
 if os.environ.get("RENDER"):
     DATABASES = {
-        'default': dj_database_url.parse(os.environ.get("postgresql://simpleblog_eobq_user:j5ICLLz3jzWP7num1DxqSXxrXEPm5BxV@dpg-d7jme1a8qa3s73ao3ehg-a/simpleblog_eobq"))
+        'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
     }
 else:
     DATABASES = {
