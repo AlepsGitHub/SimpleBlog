@@ -94,6 +94,14 @@
     </main>
     <script src="{% static 'js/main.js' %}" defer></script>
 
+    <script>
+      const toggle = document.getElementById('nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      });
+    </script>
+
     <footer class="footer">
         <p>Built with Django &mdash; {% now "Y" %}</p>
     </footer>
