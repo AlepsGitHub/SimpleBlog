@@ -35,7 +35,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
     height: 64px;
     background-color: var(--surface);
     border-bottom: 1px solid var(--border);
@@ -142,6 +142,28 @@ body {
     color: #f09090;
 }
 
+/* ── Hamburger (mobile only) ── */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 200;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: var(--text);
+    border-radius: 2px;
+    transition: all var(--transition);
+}
+
 /* ── Main ── */
 .main-content {
     flex: 1;
@@ -245,6 +267,7 @@ section {
 /* ── Forms ── */
 .form-with-validation {
     max-width: 480px;
+    width: 100%;
     font-size: 1rem;
     padding: 1.5rem;
     display: flex;
@@ -373,4 +396,108 @@ section {
 .post-body {
     font-size: 0.95rem;
     color: var(--text-muted);
+}
+
+/* ── Tablet (max 768px) ── */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background-color: var(--surface);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+        height: auto;
+        padding: 0.5rem 0;
+        z-index: 99;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li {
+        height: auto;
+        width: 100%;
+    }
+
+    .nav-item {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 0.75rem;
+        padding: 0.85rem 1.5rem;
+        border-radius: 0;
+        font-size: 0.95rem;
+        width: 100%;
+    }
+
+    .nav-icon {
+        font-size: 1.2rem;
+    }
+
+    .nav-label {
+        font-size: 0.9rem;
+        text-transform: none;
+        letter-spacing: 0;
+    }
+
+    .logout-form {
+        width: 100%;
+    }
+
+    .logout-btn {
+        width: 100%;
+    }
+
+    .main-content {
+        padding: 1.25rem 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    .form-with-validation {
+        max-width: 100%;
+        padding: 1.25rem;
+    }
+}
+
+/* ── Mobile (max 480px) ── */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0 1rem;
+    }
+
+    .brand-link {
+        font-size: 1rem;
+    }
+
+    .main-content {
+        padding: 1rem 0.75rem;
+    }
+
+    .post {
+        padding: 1rem;
+    }
+
+    .welcome-banner {
+        font-size: 0.85rem;
+    }
+
+    .form-submit {
+        width: 100%;
+        text-align: center;
+    }
 }
