@@ -8,12 +8,16 @@
         {% block title %}Django App{% endblock %}
     </title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="{% static 'js/main.js' %}" defer></script>
 </head>
 <body>
     <nav class="navbar">
         <a href="/" class="brand-link">⚡ ThoughtApp</a>
-
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
         <ul class="nav-links">
             <li>
                 <a href="/" class="nav-item">
@@ -88,6 +92,7 @@
 
         {% block content %}{% endblock %}
     </main>
+    <script src="{% static 'js/main.js' %}" defer></script>
 
     <footer class="footer">
         <p>Built with Django &mdash; {% now "Y" %}</p>
