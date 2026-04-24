@@ -8,13 +8,12 @@
         {% block title %}Django App{% endblock %}
     </title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/main.js' %}" defer></script>
 </head>
 <body>
     <nav class="navbar">
-        <div class="nav-brand">
-            <a href="/" class="brand-link">⚡ DjangoApp</a>
-        </div>
+        <a href="/" class="brand-link">⚡ DjangoApp</a>
+
         <ul class="nav-links">
             <li>
                 <a href="/" class="nav-item">
@@ -34,6 +33,7 @@
                     <span class="nav-label">Posts</span>
                 </a>
             </li>
+
             {% if user.is_authenticated %}
                 <li>
                     <a href="{% url 'posts:new-post' %}" class="nav-item">
